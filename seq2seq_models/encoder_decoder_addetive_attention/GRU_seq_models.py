@@ -42,7 +42,7 @@ class SeqDecoderAttention(Decoder):
         X_dec = X_dec.permute(1, 0, 2)
         # print("X_dec.shape", X_dec.shape)
 
-        for x in X_dec:
+        for x in X_dec: # iterate over the num_steps in the sequences
             query = hiddens[-1]
             # print("query.shape", query.shape)
             query = query.unsqueeze(1)
