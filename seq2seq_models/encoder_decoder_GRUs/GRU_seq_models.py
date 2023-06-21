@@ -44,7 +44,7 @@ class SeqDecoder(Decoder):
             output.append(dec_output)
         dec_output = torch.cat(output, dim=0)
         out = self.output_layer(dec_output).permute(1, 0, 2)
-        return out
+        return out, [dec_output, hiddens]
 
 class Seq2Seq(EncoderDecoder):
     def __init__(self, encoder, decoder, pad_token, lr=0.01):
