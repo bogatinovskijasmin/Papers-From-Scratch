@@ -58,13 +58,13 @@ class SeqDecoderAttention(Decoder):
             # print(f"2. context_and_input.shape {context_and_input.shape}")
             dec_output, hiddens = self.rnn(context_and_input, hiddens)
             # print(f"dec_output.shape", dec_output.shape)
-            output.append(dec_output.permute(1, 0, 2))
-
+            output.append(dec_output)
+            # print("========"*10)
         out = torch.cat(output, dim=0)
         # print(f"out.shape ", out.shape)
-        out = self.output_layer(out)
+        out = self.output_layer(out).permute(1, 0, 2)
         # print(f"out.shape ", out.shape)
-        return out, [dec_output, hiddens]
+        return out, [enc_states, hiddens, valid_seq_lens]
 
 class Seq2Seq(EncoderDecoder):
     def __init__(self, encoder, decoder, pad_token, lr=0.01):
