@@ -18,13 +18,13 @@ class SeqEncoder(Encoder):
 
 
 class SeqDecoderAttention(Decoder):
-    def __init__(self, vocab_size, input_size, num_hiddens, num_layers, dropout):
+    def __init__(self, vocab_size, input_size, num_hiddens, num_layers, dropout, use_bias):
         super().__init__()
         self.num_hiddens = num_hiddens
         self.input_size = input_size
         self.num_layers = num_layers
 
-        self.attention = AddetiveAttention(num_hiddens=num_hiddens, dropout=dropout)
+        self.attention = AddetiveAttention(num_hiddens=num_hiddens, dropout=dropout, bias=use_bias)
         self.embedding = torch.nn.Embedding(vocab_size, input_size)
         self.rnn = torch.nn.GRU(input_size=input_size+num_hiddens, hidden_size=num_hiddens, num_layers=num_layers, dropout=dropout)
         self.output_layer = torch.nn.LazyLinear(vocab_size)

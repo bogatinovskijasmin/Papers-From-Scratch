@@ -22,13 +22,13 @@ def masked_softmax(features, valid_seq_lens):
 
 
 class AddetiveAttention(torch.nn.Module):
-    def __init__(self, num_hiddens, dropout):
+    def __init__(self, num_hiddens, dropout, bias=False):
         super().__init__()
-        self.W_q = torch.nn.LazyLinear(num_hiddens)
-        self.W_k = torch.nn.LazyLinear(num_hiddens)
-        self.W_v = torch.nn.LazyLinear(1)
+        self.W_q = torch.nn.LazyLinear(num_hiddens, bias=bias)
+        self.W_k = torch.nn.LazyLinear(num_hiddens, bias=bias)
+        self.W_v = torch.nn.LazyLinear(1, bias=bias)
         self.dropout = torch.nn.Dropout(dropout)
-        self.W_o = torch.nn.LazyLinear(num_hiddens)
+        self.W_o = torch.nn.LazyLinear(num_hiddens, bias=bias)
 
     def forward(self, queries, keys, values, valid_seq_len):
         queries = self.W_q(queries)

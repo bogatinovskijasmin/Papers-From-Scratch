@@ -18,13 +18,14 @@ if __name__ == "__main__":
     num_hiddens = 256
     num_layers = 2
     dropout = 0.01
+    use_bias = False
 
     data = MTFraEng(batch_size=batch_size)
     trainer = Trainer(max_epochs=max_epochs, gradient_clip_val=gradient_clip_val)
     source_vocab_size = len(data.src_vocab.token_to_idx)
     target_vocab_size = len(data.tgt_vocab.token_to_idx)
     seq_encoder = SeqEncoder(vocab_size=source_vocab_size, input_size=input_size, num_hiddens=num_hiddens, num_layers=num_layers, dropout=dropout)
-    seq_decoder = SeqDecoderAttention(vocab_size=target_vocab_size, input_size=input_size, num_hiddens=num_hiddens, num_layers=num_layers, dropout=dropout)
+    seq_decoder = SeqDecoderAttention(vocab_size=target_vocab_size, input_size=input_size, num_hiddens=num_hiddens, num_layers=num_layers, dropout=dropout, use_bias=use_bias)
 
     plt.close("all")
 
@@ -47,5 +48,4 @@ if __name__ == "__main__":
             if token == '<eos>':
                 break
             translation.append(token)
-        print(f'{en} => {translation}, bleu,'
-              f'{model.bleu(" ".join(translation), fr, k=2):.3f}')
+        print(f'{en} => {translation}, bleu,' f'{model.bleu(" ".join(translation), fr, k=2):.3f}')
