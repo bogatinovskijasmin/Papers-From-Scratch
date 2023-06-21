@@ -1,0 +1,4 @@
+.idea/vcs.xml
+seq2seq_models/data/
+seq2seq_models/encoder_decoder_GRUs/__pycache__/
+

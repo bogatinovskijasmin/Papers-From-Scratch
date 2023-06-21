@@ -30,9 +30,9 @@ if __name__=="__main__":
     trainer = Trainer(max_epochs=max_epochs)
     trainer.fit(data=data, model=model)
 
-    z = [np.mean(trainer.training_loss_res[idx][idj].cpu().item()) for idx in range(5) for idj in range(len(trainer.training_loss_res[idx]))]
+    z = [np.mean(trainer.training_loss_res[idx][idj].cpu().item()) for idx in range(max_epochs) for idj in range(len(trainer.training_loss_res[idx]))]
     plt.plot(z, label="training loss")
-    z = [np.mean(trainer.validation_loss_res[idx][idj].cpu().item()) for idx in range(5) for idj in range(len(trainer.validation_loss_res[idx]))]
+    z = [np.mean(trainer.validation_loss_res[idx][idj].cpu().item()) for idx in range(max_epochs) for idj in range(len(trainer.validation_loss_res[idx]))]
     plt.plot(z, label="validation loss")
     plt.legend()
 
