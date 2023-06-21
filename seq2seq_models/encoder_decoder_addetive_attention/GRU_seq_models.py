@@ -32,7 +32,9 @@ class SeqDecoderAttention(Decoder):
     def init_states(self, X, valid_seq_lens, *args):
         rnn_out, hiddens = X[0], X[1]
         return (rnn_out.permute(1, 0, 2), hiddens, valid_seq_lens)
+
     def forward(self, X, states, *args):
+        # print("X.shape", X.shape)
         X_dec = self.embedding(X)
         enc_states, hiddens, valid_seq_lens = states
         output = []

@@ -10,14 +10,14 @@ from utils import MTFraEng
 
 
 if __name__ == "__main__":
-    batch_size = 8
+    batch_size = 32
     lr = 0.005
     gradient_clip_val = 1
-    max_epochs = 50
-    input_size = 256
-    num_hiddens = 256
+    max_epochs = 30
+    input_size = 128
+    num_hiddens = 128
     num_layers = 2
-    dropout = 0.01
+    dropout = 0.02
     use_bias = False
 
     data = MTFraEng(batch_size=batch_size)
