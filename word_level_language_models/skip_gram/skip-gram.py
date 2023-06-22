@@ -1,11 +1,14 @@
 import torch
+import numpy as np
+import matplotlib.pyplot as plt
+
 from utils import load_data_ptb
 
-data, vocab = load_data_ptb(batch_size=256, max_window_size=60, num_noise_words=10)
+data, vocab = load_data_ptb(batch_size=512, max_window_size=5, num_noise_words=5)
 vocab_size = len(vocab.token_to_idx)
 embed_size = 100
 device = "cuda:0"
-max_epochs = 10
+max_epochs = 5
 lr = 0.002
 
 def skip_gram(central_word, context_and_negative, v, u):
@@ -19,7 +22,7 @@ class Loss(torch.nn.Module):
     def __init__(self):
         super().__init__()
     def forward(self, preds, labels, mask):
-        return torch.nn.functional.binary_cross_entropy_with_logits(preds.type(torch.float32), labels, mask, reduction="none").mean(dim=1)
+        return torch.nn.functional.binary_cross_entropy_with_logits(preds.type(torch.float32), labels, weight=mask, reduction="none").mean(dim=1)
 
 net = torch.nn.Sequential(torch.nn.Embedding(vocab_size, embed_size),
                           torch.nn.Embedding(vocab_size, embed_size))
@@ -43,7 +46,9 @@ for epoch in range(max_epochs):
         optimizer.zero_grad()
         central_word, context_and_negative_mask, mask, labels = batch
         out = skip_gram(central_word, context_and_negative_mask, net[0], net[1])
-        l = loss(out, labels.type(torch.float32), mask)/mask.sum(axis=1) * mask.shape[1]
+        l = loss(out, labels.type(torch.float32), mask)/(mask.sum(axis=1))
         l.sum().backward()
         optimizer.step()
         training_loss.append(l.sum().item())
+
+plt.plot(np.array(training_loss).reshape(5, -1).mean(1))

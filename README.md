@@ -1,8 +1,15 @@
 # Papers From Scratch
 
-It contains dozens of my own implementations of dozens of papers. The papers are organized based on the topic they cover. 
-The main motivation for this project is to practice some of the concepts that shape the field of predominantly Deep Learning.
+It contains dozens of my own implementations of dozens of papers. Note that for the implementation the models the existing models from **torch.nn** are not used. This is a useful resource for anyone interested in learning the internals of the covered models and techniques. 
+The papers are organized based on the topic they cover. The main motivation for this project is to practice some of the concepts that shape the field of predominantly Deep Learning.
 Currently, the groups of papers are the following:
+
+### Word Level Language Models
+Contains implementation of several popular language models on word level. The current methods implemented are:
+
+1. skip-gram: **Distributed representations of words and phrases and their compositionality.** Mikolov, T., Sutskever, I., Chen, K., Corrado, G. S., & Dean, J. (2013). Advances in neural information processing systems (pp. 3111–3119).
+2. BERT: **Bert: pre-training of deep bidirectional transformers for language understanding.** Devlin, J., Chang, M.-W., Lee, K., & Toutanova, K. (2018).  arXiv preprint arXiv:1810.04805.
+
 
 ### Translation Models
 In this folder, several approaches for sequence-to-sequence (Seq2Seq) modeling are implemented. 
@@ -15,9 +22,9 @@ Bahdanau, D., Cho, K., & Bengio, Y. (2014). arXiv preprint arXiv:1409.0473.
 Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Polosukhin, I. (2017). Advances in neural information processing systems (pp. 5998–6008).
 
 
-### character_level_language_models
+### Character Level Language Models
 A recurrent model uses a character-level representation of the words in the book "Time Machine" to learn the language model.
-Note that for the implementation the default models are from the torch.nn package is not used. It implements the papers listed below:
+ It implements the papers listed below:
 
 This project implements the following papers: 
 
