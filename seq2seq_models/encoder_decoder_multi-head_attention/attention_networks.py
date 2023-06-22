@@ -5,6 +5,8 @@ class AddNorm(torch.nn.Module):
         self.batch_norm = torch.nn.LayerNorm(num_hiddens)
         self.dropout = torch.nn.Dropout(dropout)
     def forward(self, X, Y):
+        print("X.addnorm.shape", X.shape)
+        print("Y.addnorm.shape", Y.shape)
         return self.batch_norm(X + self.dropout(Y))
 
     def __call__(self, X, Y):
@@ -27,8 +29,8 @@ class PositionalEncoding(torch.nn.Module):
         super().__init__()
         self.P = torch.zeros((1, max_len, num_hiddens))
         X = torch.arange(max_len).reshape(-1, 1)/torch.pow(10000, torch.arange(0, num_hiddens, 2)/num_hiddens)
-        self.P[:, 0::2] = torch.sin(X)
-        self.P[:, 1::2] = torch.cos(X)
+        self.P[:, :, 0::2] = torch.sin(X)
+        self.P[:, :, 1::2] = torch.cos(X)
         self.dropout = torch.nn.Dropout(dropout)
 
     def __call__(self, X):

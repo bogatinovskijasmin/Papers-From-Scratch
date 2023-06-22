@@ -89,3 +89,4 @@ class EncoderDecoder(Classifier):
                     num_matches +=1
             score *= math.pow(num_matches/(len_pred_seq-n+1), math.pow(0.5, n))
 
+        return score
