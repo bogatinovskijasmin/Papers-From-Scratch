@@ -8,12 +8,11 @@ from attention_model import BERT
 from BERT_pretraining_data_preparation import load_data_wiki
 
 
-
 if __name__ == "__main__":
     batch_size = 512
     lr = 0.01
 
-    max_epochs = 50
+    max_epochs = 5
     num_heads = 4
     num_hiddens = 128
     num_layers = 2
@@ -32,7 +31,10 @@ if __name__ == "__main__":
 
     def get_loss(mlm_output, nsp_output, all_mlm_labels, labels_nsp, masked_positions, loss):
         l_nsp = loss(nsp_output, labels_nsp)
-        l_mlm = loss(mlm_output.reshape(-1, mlm_output.shape[-1]), all_mlm_labels.reshape(-1))
+
+        l_mlm = loss(mlm_output.reshape(-1, mlm_output.shape[-1]), all_mlm_labels.reshape(-1))*masked_positions.reshape(-1, 1)
+        l_mlm = l_mlm.sum()/(masked_positions.sum()+1e-8)
+
         l = l_mlm + l_nsp
         return l, l_mlm, l_nsp
 
@@ -42,21 +44,16 @@ if __name__ == "__main__":
 
     for epoch in range(max_epochs):
         print(f"Currently running epoch {epoch+1}/{max_epochs}")
-
         for idx, batch in enumerate(data):
             batch = [a.to(device) for a in batch]
-
             encoded_sequence, segment, valid_seq_len, all_pred_positions, masked_positions, all_mlm_labels, labels_nsp = batch
             optimizer.zero_grad()
-
             X_encoded, mlm_output, nsp_output = BERT.forward(X=encoded_sequence, segment=segment, valdid_seq_len=valid_seq_len, pred_pos=all_pred_positions)
             l_, l_mlm_, l_nsp_ = get_loss(mlm_output, nsp_output, all_mlm_labels, labels_nsp, masked_positions, loss)
             l_.backward()
             optimizer.step()
-
             training_loss_mlm[epoch].append(l_mlm_.item())
             training_loss_nsp[epoch].append(l_nsp_.item())
-
 
     s = [np.mean(training_loss_mlm[idx]) for idx in range(max_epochs)]
     plt.plot(s, label="mlm loss")

@@ -4,7 +4,7 @@ It contains dozens of my own implementations of dozens of papers. The papers are
 The main motivation for this project is to practice some of the concepts that shape the field of predominantly Deep Learning.
 Currently, the groups of papers are the following:
 
-### seq2seq_models
+### Translation Models
 In this folder, several approaches for sequence-to-sequence (Seq2Seq) modeling are implemented. 
 
 1. encoder_decoder_GRUs: **Sequence to sequence learning with neural networks.** Sutskever et al., 2014

@@ -1,4 +1,8 @@
 .idea/vcs.xml
-seq2seq_models/data/
-seq2seq_models/encoder_decoder_GRUs/__pycache__/
+translation_models/data/
+translation_models/encoder_decoder_GRUs/__pycache__/
+translation_models/encoder_decoder_addetive_attention/__pycache__/
+translation_models/encoder_decoder_multi-head_attention/__pycache__/
+word_level_language_models/data/
+word_level_language_models/skip_gram/__pycache__/
 

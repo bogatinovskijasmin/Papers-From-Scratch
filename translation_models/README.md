@@ -1,6 +1,6 @@
-# Sequence-to-Sequence Models
+# Translation Models
 
-In practice it is common to have problems with arbitrary lengths of input and output. For example, the problem of translation between two 
+In practice, it is common to have problems with arbitrary lengths of input and output. For example, the problem of translation between two 
 languages can be seen as mapping the input sequence of the source language to a variable length sequence of the target language. Similar problems
 are mapping between text and sound, sequence and shifted version of the sequence among others. 
 
