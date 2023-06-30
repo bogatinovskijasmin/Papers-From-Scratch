@@ -1,6 +1,6 @@
 # Papers From Scratch
 
-It contains dozens of my own implementations of dozens of papers. Note that for the implementation the models the existing models from **torch.nn** are not used. This is a useful resource for anyone interested in learning the internals of the covered models and techniques. 
+It contains dozens of most important paper implementation of the course of the past two decades. Note that for the implementation the models the existing models from **torch.nn** are not used. This is a useful resource for anyone interested in learning the internals of the covered models and techniques. 
 The papers are organized based on the topic they cover. The main motivation for this project is to practice some of the concepts that shape the field of predominantly Deep Learning.
 Currently, the groups of papers are the following:
 
@@ -34,11 +34,8 @@ This project implements the following papers:
 4. Stacked RNN **Learning internal representations by error propagation.** Rumelhart, David E; Hinton, Geoffrey E, and Williams, Ronald J (Sept. 1985). Tech. rep. ICS 8504. San Diego, California: Institute for Cognitive Science, University of California.
 5. Bidirectional RNN **Bidirectional recurrent neural networks.** Schuster, M., & Paliwal, K. K. (1997). IEEE Transactions on Signal Processing, 45(11), 2673–2681.
 
-
- 
-### common_optimizers_used_in_deep_learning
-
-This project closely follows the following literature: 
+### Common Optimization Methods used in Deep Learning
+This project closely follows the following literature:
 
 1. Momentum: **Lectures on convex optimization.** Nesterov, Y. (2018).  Vol. 137. Springer. 
 2. AdaGrad: **Adaptive subgradient methods for online learning and stochastic optimization.** Duchi, J., Hazan, E., & Singer, Y. (2011). Journal of Machine Learning Research, 12(Jul), 2121–2159.
@@ -46,3 +43,17 @@ This project closely follows the following literature:
 Tieleman, T., & Hinton, G. (2012). COURSERA: Neural networks for machine learning, 4(2), 26–31.
 4. Adadelta: **An adaptive learning rate method.** arXiv preprint arXiv:1212.5701. Zeiler, M. D. (2012).
 5. Adam: **A method for stochastic optimization.** arXiv preprint arXiv:1412.6980. Kingma, D. P., & Ba, J. (2014).
+
+### Popular Vision Architectures
+This project implements the following popular vision architectures: 
+
+1. LeNet: **Gradient-based learning applied to document recognition.**, LeCun, Y., Bottou, L., Bengio, Y., Haffner, P., & others. (1998). Proceedings of the IEEE, 86(11), 2278–2324.
+2. AlexNet: **Imagenet classification with deep convolutional neural networks.**, Krizhevsky, A., Sutskever, I., & Hinton, G. E. (2012). Advances in neural information processing systems (pp. 1097–1105).
+3. VGG: **Very deep convolutional networks for large-scale image recognition.**, Simonyan, K., & Zisserman, A. (2014).  arXiv preprint arXiv:1409.1556.
+4. GoogleNet: **Going deeper with convolutions.**, Szegedy, C., Liu, W., Jia, Y., Sermanet, P., Reed, S., Anguelov, D., … Rabinovich, A. (2015). Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 1–9)
+5. ResNet: **Deep residual learning for image recognition.**, He, K., Zhang, X., Ren, S., & Sun, J. (2016). Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 770–778)
+6. NiNet: **Network in network.**, Lin, M., Chen, Q., & Yan, S. (2013). arXiv preprint arXiv:1312.4400.
+7. AnyNet (RegNetX): **Designing network design spaces.**, Radosavovic, I., Kosaraju, R. P., Girshick, R., He, K., & Dollár, P. (2020). Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 10428–10436).
+
+The code was implemented by myself and occasionally is closely following implementations from the book "Dive Into Deep Learning" Smola, A. et al.. 
+
