@@ -55,5 +55,4 @@ This project implements the following popular vision architectures:
 6. NiNet: **Network in network.**, Lin, M., Chen, Q., & Yan, S. (2013). arXiv preprint arXiv:1312.4400.
 7. AnyNet (RegNetX): **Designing network design spaces.**, Radosavovic, I., Kosaraju, R. P., Girshick, R., He, K., & Dollár, P. (2020). Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 10428–10436).
 
-The code was implemented by myself and occasionally is closely following implementations from the book "Dive Into Deep Learning" Smola, A. et al.. 
-
+The code was implemented by myself. Occasionally the code is closely following implementations from the book "Dive Into Deep Learning" Smola, A. et al. (e.g., for data reading, loading).
