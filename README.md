@@ -55,4 +55,10 @@ This project implements the following popular vision architectures:
 6. NiNet: **Network in network.**, Lin, M., Chen, Q., & Yan, S. (2013). arXiv preprint arXiv:1312.4400.
 7. AnyNet (RegNetX): **Designing network design spaces.**, Radosavovic, I., Kosaraju, R. P., Girshick, R., He, K., & Dollár, P. (2020). Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 10428–10436).
 
-The code was implemented by myself. Occasionally the code is closely following implementations from the book "Dive Into Deep Learning" Smola, A. et al. (e.g., for data reading, loading).
+### General Adversarial Networks:
+This project implements the following paper:
+
+1. DCGAN: **Unsupervised representation learning with deep convolutional generative adversarial networks.**, Radford, A., Metz, L., & Chintala, S. (2015). arXiv preprint arXiv:1511.06434.
+
+
+While the majority of the code is written by me, on places it closly follows code implementations from the book "Dive Into Deep Learning" Smola, A. et al. (e.g., for data reading, loading).
