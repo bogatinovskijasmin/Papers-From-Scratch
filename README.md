@@ -73,4 +73,4 @@ Tieleman, T., & Hinton, G. (2012). COURSERA: Neural networks for machine learnin
 
 
 
-While the majority of the code is written by me, on places it closly follows code implementations from the book "Dive Into Deep Learning" Smola, A. et al. (e.g., for data reading, loading), licensed under https://github.com/d2l-ai/d2l-en/blob/master/LICENSE.
+While the majority of the code is written by me, on places it closely follows code implementations from the book "Dive Into Deep Learning" Smola, A. et al. (e.g., for data reading, loading), licensed under https://github.com/d2l-ai/d2l-en/blob/master/LICENSE.
