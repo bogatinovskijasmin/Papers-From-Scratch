@@ -1,8 +1,46 @@
 # Papers From Scratch
 
-It contains dozens of most important paper implementation of the course of the past two decades. Note that for the implementation the models the existing models from **torch.nn** are not used. This is a useful resource for anyone interested in learning the internals of the covered models and techniques. 
+It contains dozens of most important paper implementation of the course of the past two decades. Note that for the implementation for some of the methods the class **torch.nn** is not used. This is due to the fact to build understanding for the inner working on core componnents of the commonly used methods in production. This is a useful resource for anyone interested in learning the internals of the covered models and techniques. 
 The papers are organized based on the topic they cover. The main motivation for this project is to practice some of the concepts that shape the field of predominantly Deep Learning.
-Currently, the groups of papers are the following:
+Currently, there are **28** papers that are implemented. 
+
+**Overview at a glance:**
+
+1. **Sequence Modeling** 
+
+    *1.1. World-level Language Methods*
+
+    *1.2. Translation Methods*
+
+    *1.3. Character-level Language Methods*
+
+2. **Computer Vision**
+
+    *2.1. Popular Vision Architectures*
+
+    *2.2. Vision Applications*
+
+3. **Other Topics**
+
+    *3.1. Common Optimization Methods used in Deep Learning*
+
+    *3.2. Recommendation Methods*
+
+    *3.3. General Adversarial Networks*
+
+The considered datasets are the following: 
+1. The book "Time Machine" by H. G. Wells [1898]
+2. English to French bilingual translation pairs http://www.manythings.org/anki/
+3. Penn Tree Bank (https://catalog.ldc.upenn.edu/LDC99T42)
+4. Wiki-2 (preprint arXiv:1609.07843)
+5. ImageNet 
+6. Fashion MNIST (build-in in PyTorch)
+7. Movies Lens (http://files.grouplens.org/datasets/movielens/ml-100k.zip)
+8. Click through Rate (McMahan, H. B., Holt, G., Sculley, D., Young, M., Ebner, D., Grady, J., … others. (2013). Ad click prediction: a view from the trenches. Proceedings of the 19th ACM SIGKDD international conference on Knowledge discovery and data mining (pp. 1222–1230).)
+9. Pokemondb (https://pokemondb.net/sprites)
+10. Synthetic data created with built-in torch functions
+
+The groups of papers are the following:
 
 ## 1. Sequence Modeling
 
@@ -49,12 +87,8 @@ This project implements the following popular vision architectures:
 6. NiNet: **Network in network.**, Lin, M., Chen, Q., & Yan, S. (2013). arXiv preprint arXiv:1312.4400.
 7. AnyNet (RegNetX): **Designing network design spaces.**, Radosavovic, I., Kosaraju, R. P., Girshick, R., He, K., & Dollár, P. (2020). Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 10428–10436).
 
-### 2.2. General Adversarial Networks:
-This project implements the following paper:
 
-1. DCGAN: **Unsupervised representation learning with deep convolutional generative adversarial networks.**, Radford, A., Metz, L., & Chintala, S. (2015). arXiv preprint arXiv:1511.06434.
-
-### 2.3. Vision Applications:
+### 2.2. Vision Applications:
 This project implements the following paper:
 
 1. Style Transfer: **Image style transfer using convolutional neural networks.**,  Gatys, L. A., Ecker, A. S., & Bethge, M. (2016). Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 2414–2423).
@@ -71,6 +105,14 @@ Tieleman, T., & Hinton, G. (2012). COURSERA: Neural networks for machine learnin
 4. Adadelta: **An adaptive learning rate method.** arXiv preprint arXiv:1212.5701. Zeiler, M. D. (2012).
 5. Adam: **A method for stochastic optimization.** arXiv preprint arXiv:1412.6980. Kingma, D. P., & Ba, J. (2014).
 
+### 3.2. Recommendation Methods
+This project implements the following approaches:
+1. Matrix Factorization; **Matrix factorization techniques for recommender systems.** Koren, Y., Bell, R., & Volinsky, C. (2009). Computer, pp. 30–37.
+2. AutoRec: **Autorec: autoencoders meet collaborative filtering.**  Sedhain, S., Menon, A. K., Sanner, S., & Xie, L. (2015). Proceedings of the 24th International Conference on World Wide Web (pp. 111–112).
+3. Factorization Machines; **Factorization machines.** Rendle, S. (2010). 2010 IEEE International Conference on Data Mining (pp. 995–1000).
+4. Deep Factorization Machines (DeepFM); **Deepfm: a factorization-machine based neural network for ctr prediction.**  Guo, H., Tang, R., Ye, Y., Li, Z., & He, X. (2017). Proceedings of the 26th International Joint Conference on Artificial Intelligence (pp. 1725–1731).
 
+### 3.3. General Adversarial Networks
+1. DCGAN: **Unsupervised representation learning with deep convolutional generative adversarial networks.**, Radford, A., Metz, L., & Chintala, S. (2015). arXiv preprint arXiv:1511.06434.
 
-While the majority of the code is written by me, on places it closely follows code implementations from the book "Dive Into Deep Learning" Smola, A. et al. (e.g., for data reading, loading), licensed under https://github.com/d2l-ai/d2l-en/blob/master/LICENSE.
+While the code is written by me, on places for the sake of convinence, it closely follows code implementations from the book "Dive Into Deep Learning" Smola, A. et al. (e.g., for data downloading, loading etc.), licensed under https://github.com/d2l-ai/d2l-en/blob/master/LICENSE.
