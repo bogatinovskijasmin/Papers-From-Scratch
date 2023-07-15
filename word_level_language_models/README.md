@@ -5,5 +5,6 @@ The "context"-dependacy refers to the fact wether the embedding of a certain wor
 
 1. skip-gram: **Distributed representations of words and phrases and their compositionality.** Mikolov, T., Sutskever, I., Chen, K., Corrado, G. S., & Dean, J. (2013). Advances in neural information processing systems (pp. 3111–3119).
 2. BERT: **Bert: pre-training of deep bidirectional transformers for language understanding.** Devlin, J., Chang, M.-W., Lee, K., & Toutanova, K. (2018).  arXiv preprint arXiv:1810.04805.
+3. GPT-3: **Language Models are Few-Shot Learners**, Sutskever, I., Amodei D. (2020) https://arxiv.org/abs/2005.14165
 
 As a dataset used a sample of Wikipedia articles. The data preparation scripts were obtained from the book "Dive Into Deep Learning". 

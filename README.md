@@ -39,6 +39,7 @@ The considered datasets are the following:
 8. Click through Rate (McMahan, H. B., Holt, G., Sculley, D., Young, M., Ebner, D., Grady, J., … others. (2013). Ad click prediction: a view from the trenches. Proceedings of the 19th ACM SIGKDD international conference on Knowledge discovery and data mining (pp. 1222–1230).)
 9. Pokemondb (https://pokemondb.net/sprites)
 10. Synthetic data created with built-in torch functions
+11. Shakespeare (https://huggingface.co/datasets/tiny_shakespeare)
 
 The groups of papers are the following:
 
@@ -48,7 +49,8 @@ The groups of papers are the following:
 Contains implementation of several popular language models on word level. The current methods implemented are:
 
 1. skip-gram: **Distributed representations of words and phrases and their compositionality.** Mikolov, T., Sutskever, I., Chen, K., Corrado, G. S., & Dean, J. (2013). Advances in neural information processing systems (pp. 3111–3119).
-2. BERT: **Bert: pre-training of deep bidirectional transformers for language understanding.** Devlin, J., Chang, M.-W., Lee, K., & Toutanova, K. (2018).  arXiv preprint arXiv:1810.04805.
+2. BERT: **Bert: pre-training of deep bidirectional transformers for language understanding.** Devlin, J., Chang, M.-W., Lee, K., & Toutanova, K. (2018).  arXiv preprint arXiv:1810.04805. 
+3. GPT-3: **Language Models are Few-Shot Learners**, Sutskever, I., Amodei D. (2020) https://arxiv.org/abs/2005.14165
 
 ### 1.2. Translation Models
 In this folder, several approaches for sequence-to-sequence (Seq2Seq) modeling are implemented. 
