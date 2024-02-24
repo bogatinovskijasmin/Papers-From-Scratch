@@ -211,13 +211,9 @@ class Up(torch.nn.Module):
         )  # This layer is used for embedding the time dimensions of the step when the noise was injected. 
 
     def forward(self, x, skip_x, t):
-        print(x.shape)
         x = self.up(x)
-        print(x.shape)
         x = torch.cat([skip_x, x], dim=1)
-        print(x.shape)
         x = self.conv(x)
-        print(x.shape)
         emb = self.emb_layer(t)[:, :, None, None].repeat(1, 1, x.shape[-2], x.shape[-1])
         return x + emb
 
@@ -239,16 +235,12 @@ class SelfAttention(torch.nn.Module):
         )
 
     def forward(self, x):
-        print("Input attention ", x.shape)
         x = x.view(-1, self.channels, self.size*self.size).swapaxes(1, 2)
-        print("Input attention after view ", x.shape)
         x_ln = self.ln(x)
-
         attention_value, _ = self.mha(x_ln, x_ln, x_ln)
         attention_value = attention_value + x
         attention_value = self.ff_self(attention_value) + attention_value
         out = attention_value.swapaxes(2, 1).view(-1, self.channels, self.size, self.size)
-        print("Input attention after view ", out.shape)
         return out
 
 
@@ -298,49 +290,27 @@ class UNet(torch.nn.Module):
         t = t.unsqueeze(-1).type(torch.float)
         t = self.pos_encodings(t, self.time_dim)
 
-        print(x.shape, t.shape)
         x1 = self.inc(x)
-        print("input convolution ", x1.shape)
         x2 = self.down1(x1, t)
-        print("first down convolution ", x2.shape)
         x2 = self.sa1(x2)
-        print("first self attention ", x2.shape)
         x3 = self.down2(x2, t)
-        print("second down convolution" , x3.shape)
         x3 = self.sa2(x3)
-        print("second self attention ", x3.shape)
-                
+                        
         x4 = self.down3(x3, t)
-        print("third down convoluiton ", x4.shape)
         x4 = self.sa3(x4)
-        print("third self-attention ", x4.shape)
         
-
-        
-        print("first botlenach input ", x4.shape)
         x4 = self.bot1(x4)
-        print("second botlenach input ", x4.shape)
         x4 = self.bot2(x4)
-        print("third botlenach input ", x4.shape)
         x4 = self.bot3(x4)
-        print("third botlenach output ", x4.shape)
         
-
         x = self.up1(x4, x3, t)
-        print("first up ", x4.shape, x3.shape, t.shape)
         x = self.sa4(x)
-        print("self-attention 4 ", x.shape)
         x = self.up2(x, x2, t)
-        print("second up ", x.shape, x2.shape, t.shape)
         
         x = self.sa5(x)
-        
         x = self.up3(x, x1, t)
-        
         x = self.sa6(x)
 
-
-        exit(-1)
         output = self.outc(x)
         
         return output
