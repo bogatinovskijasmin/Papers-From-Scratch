@@ -6,27 +6,37 @@ Currently, there are **29** papers that are implemented.
 
 **Overview at a glance:**
 
-1. **Sequence Modeling** 
+1. **Geneartive AI** 
 
-    *1.1. World-level Language Methods*
+### 1.1. Denosing Diffusion Probabilistic Models (DDPM)
 
-    *1.2. Translation Methods*
+    *1.1. Diffusion Probabilistic Model*
 
-    *1.3. Character-level Language Methods*
+    *1.2. Conditional Diffusion Probabilistic Model*
 
-2. **Computer Vision**
+    *1.3. Geneartive Adversarial Network*
 
-    *2.1. Popular Vision Architectures*
 
-    *2.2. Vision Applications*
+2. **Sequence Modeling** 
 
-3. **Other Topics**
+    *2.1. World-level Language Methods*
 
-    *3.1. Common Optimization Methods Used in Deep Learning*
+    *2.2. Translation Methods*
 
-    *3.2. Recommendation Methods*
+    *2.3. Character-level Language Methods*
 
-    *3.3. General Adversarial Networks*
+3. **Computer Vision**
+
+    *3.1. Popular Vision Architectures*
+
+    *3.2. Vision Applications*
+
+4. **Other Topics**
+
+    *4.1. Common Optimization Methods Used in Deep Learning*
+
+    *4.2. Recommendation Methods*
+
 
 The considered datasets are the following: 
 1. The book "Time Machine" by H. G. Wells [1898]
@@ -43,16 +53,25 @@ The considered datasets are the following:
 
 The groups of papers are the following:
 
-## 1. Sequence Modeling
+## 1. Geneartive AI
 
-### 1.1.  Word Level Language Models
+1. DDPM: **Improved Denoising Diffusion Probabilistic Models (DDPM)** Ho, J., Jaini, P., Abbeel, P., & Song, Y. (2020). arXiv preprint arXiv:2006.11239.
+
+2. Conditional DDPM: **CLASSIFIER-FREE DIFFUSION GUIDANCE** Ho, J., https://arxiv.org/pdf/2207.12598.pdf.
+
+3. GAN: **Generative Adversarial Networks** Goodfellow, I., Pouget-Abadie, J., Mirza, M., Xu, B., Warde-Farley, D., Ozair, S., Courville, A., & Bengio, Y. (2014). Advances in neural information processing systems (pp. 2672–2680).
+
+
+## 2. Sequence Modeling
+
+### 2.1.  Word Level Language Models
 Contains implementation of several popular language models on word level. The current methods implemented are:
 
 1. skip-gram: **Distributed representations of words and phrases and their compositionality.** Mikolov, T., Sutskever, I., Chen, K., Corrado, G. S., & Dean, J. (2013). Advances in neural information processing systems (pp. 3111–3119).
 2. BERT: **Bert: pre-training of deep bidirectional transformers for language understanding.** Devlin, J., Chang, M.-W., Lee, K., & Toutanova, K. (2018).  arXiv preprint arXiv:1810.04805. 
 3. GPT-3: **Language Models are Few-Shot Learners**, Sutskever, I., Amodei D. (2020) https://arxiv.org/abs/2005.14165
 
-### 1.2. Translation Models
+### 2.2. Translation Models
 In this folder, several approaches for sequence-to-sequence (Seq2Seq) modeling are implemented. 
 
 1. encoder_decoder_GRUs: **Sequence to sequence learning with neural networks.** Sutskever et al., 2014
@@ -63,7 +82,7 @@ Bahdanau, D., Cho, K., & Bengio, Y. (2014). arXiv preprint arXiv:1409.0473.
 Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Polosukhin, I. (2017). Advances in neural information processing systems (pp. 5998–6008).
 
 
-### 1.3. Character Level Language Models
+### 2.3. Character Level Language Models
 A recurrent model uses a character-level representation of the words in the book "Time Machine" to learn the language model.
  It implements the papers listed below:
 
@@ -76,9 +95,9 @@ This project implements the following papers:
 5. Bidirectional RNN **Bidirectional recurrent neural networks.** Schuster, M., & Paliwal, K. K. (1997). IEEE Transactions on Signal Processing, 45(11), 2673–2681.
 
 
-## 2. Computer Vision
+## 3. Computer Vision
 
-### 2.1. Popular Vision Architectures
+### 3.1. Popular Vision Architectures
 This project implements the following popular vision architectures: 
 
 1. LeNet: **Gradient-based learning applied to document recognition.**, LeCun, Y., Bottou, L., Bengio, Y., Haffner, P., & others. (1998). Proceedings of the IEEE, 86(11), 2278–2324.
@@ -90,14 +109,14 @@ This project implements the following popular vision architectures:
 7. AnyNet (RegNetX): **Designing network design spaces.**, Radosavovic, I., Kosaraju, R. P., Girshick, R., He, K., & Dollár, P. (2020). Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 10428–10436).
 
 
-### 2.2. Vision Applications:
+### 3.2. Vision Applications:
 This project implements the following paper:
 
 1. Style Transfer: **Image style transfer using convolutional neural networks.**,  Gatys, L. A., Ecker, A. S., & Bethge, M. (2016). Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 2414–2423).
 
-## 3. Other Topics:
+## 4 Other Topics:
 
-### 3.1. Common Optimization Methods used in Deep Learning
+### 4.1. Common Optimization Methods used in Deep Learning
 This project closely follows the following literature:
 
 1. Momentum: **Lectures on convex optimization.** Nesterov, Y. (2018).  Vol. 137. Springer. 
@@ -107,14 +126,12 @@ Tieleman, T., & Hinton, G. (2012). COURSERA: Neural networks for machine learnin
 4. Adadelta: **An adaptive learning rate method.** arXiv preprint arXiv:1212.5701. Zeiler, M. D. (2012).
 5. Adam: **A method for stochastic optimization.** arXiv preprint arXiv:1412.6980. Kingma, D. P., & Ba, J. (2014).
 
-### 3.2. Recommendation Methods
+### 4.2. Recommendation Methods
 This project implements the following approaches:
 1. Matrix Factorization; **Matrix factorization techniques for recommender systems.** Koren, Y., Bell, R., & Volinsky, C. (2009). Computer, pp. 30–37.
 2. AutoRec: **Autorec: autoencoders meet collaborative filtering.**  Sedhain, S., Menon, A. K., Sanner, S., & Xie, L. (2015). Proceedings of the 24th International Conference on World Wide Web (pp. 111–112).
 3. Factorization Machines; **Factorization machines.** Rendle, S. (2010). 2010 IEEE International Conference on Data Mining (pp. 995–1000).
 4. Deep Factorization Machines (DeepFM); **Deepfm: a factorization-machine based neural network for ctr prediction.**  Guo, H., Tang, R., Ye, Y., Li, Z., & He, X. (2017). Proceedings of the 26th International Joint Conference on Artificial Intelligence (pp. 1725–1731).
 
-### 3.3. General Adversarial Networks
-1. DCGAN: **Unsupervised representation learning with deep convolutional generative adversarial networks.**, Radford, A., Metz, L., & Chintala, S. (2015). arXiv preprint arXiv:1511.06434.
 
 While the code is written by me, on places for the sake of convinence, it closely follows code implementations from the book "Dive Into Deep Learning" Smola, A. et al. (e.g., for data downloading, loading etc.), licensed under https://github.com/d2l-ai/d2l-en/blob/master/LICENSE.
