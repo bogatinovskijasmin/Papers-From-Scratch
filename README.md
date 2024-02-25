@@ -2,7 +2,7 @@
 
 It contains dozens of implementations of some of the most interesting ideas in Machine Learning over the past two decades. Note that for the implementation of some of the methods, the class **torch.nn** is not used. This is due to the intention to practice the internal inner working of the commonly used core methods and ideas. This is a useful resource for anyone interested in learning the internals of the covered models and techniques. 
 The papers are organized based on the topic they cover. The main motivation for this project is to practice some of the concepts that shape the field of predominantly Deep Learning.
-Currently, there are **29** papers that are implemented. 
+Currently, there are **31** papers that are implemented. 
 
 **Overview at a glance:**
 
